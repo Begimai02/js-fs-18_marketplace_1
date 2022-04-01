@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
 import Products from "./pages/Products";
+import List from "./components/Admin/List/List";
+import Add from "./components/Admin/Add/Add";
+import Edit from "./components/Admin/Edit/Edit";
 
 const MyRoutes = () => {
   return (
@@ -12,7 +15,11 @@ const MyRoutes = () => {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route index element={<List />} />
+          <Route path="add" element={<Add />} />
+          <Route path="edit/:id" element={<Edit />} />
+        </Route>
         <Route path="/products" element={<Products />} />
       </Route>
     </Routes>
