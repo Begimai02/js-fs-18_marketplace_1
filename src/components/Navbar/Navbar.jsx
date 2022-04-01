@@ -15,6 +15,11 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Button } from "@mui/material";
+import { Link as RouterLink, NavLink } from "react-router-dom";
+import InfoIcon from "@mui/icons-material/Info";
+
+import "./Navbar.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -119,6 +124,46 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {/*===> here is my items */}
+      <MenuItem>
+        <NavLink to="/about" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <InfoIcon />
+          </IconButton>
+          <p>About</p>
+        </NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to="/products" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <InfoIcon />
+          </IconButton>
+          <p>Products</p>
+        </NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to="/admin" className="mobile-link">
+          <IconButton
+            size="large"
+            aria-label="show 4 new mails"
+            color="inherit"
+          >
+            <InfoIcon />
+          </IconButton>
+          <p>Admin</p>
+        </NavLink>
+      </MenuItem>
+
+      {/* end of my items */}
+
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -158,7 +203,7 @@ export default function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -166,11 +211,12 @@ export default function Navbar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            to="/"
+            component={RouterLink}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
             MUI
@@ -185,6 +231,46 @@ export default function Navbar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/about"
+            >
+              ABOUT
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/products"
+            >
+              PRODUCTS
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
+              component={NavLink}
+              to="/admin"
+            >
+              ADMIN
+            </Button>
+          </Box>
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
