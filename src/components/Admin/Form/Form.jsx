@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 const initValues = {
   title: "",
@@ -16,6 +17,22 @@ const initValues = {
 
 const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
   const [inpValues, setInpValues] = useState(initValues);
+  const { id } = useParams();
+
+  //todo ===> EDIT
+  useEffect(() => {
+    if (compForEdit) {
+      getOneProduct(id);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (compForEdit && forEditVal) {
+      setInpValues(forEditVal);
+    }
+  }, [forEditVal]);
+
+  //todo ===> END OF EDIT
 
   const handleChange = (e) => {
     let obj = {

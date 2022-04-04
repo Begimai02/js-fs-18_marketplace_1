@@ -1,10 +1,13 @@
+import { Container } from "@mui/material";
 import React from "react";
+import ProdList from "../components/Products/ProdList/ProdList";
 
 const Products = () => {
   return (
-    <div>
+    <Container maxWidth="lg">
       <h1>Products page</h1>
-    </div>
+      <ProdList />
+    </Container>
   );
 };
 

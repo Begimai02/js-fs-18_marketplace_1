@@ -16,8 +16,12 @@ export const notify = (type, message) => {
   });
 };
 
-export const notifyError = (status, statusText) => {
-  notify("error", `${status} ${statusText}`);
+export const notifyError = (err) => {
+  if (err && err?.response) {
+    notify("error", `${err?.response.status} ${err?.response.statusText}`);
+  } else {
+    notify("error", "Произошла ошибка!");
+  }
 };
 
 const Toastify = () => {
