@@ -25,7 +25,6 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
       getOneProduct(id);
     }
   }, []);
-
   useEffect(() => {
     if (compForEdit && forEditVal) {
       setInpValues(forEditVal);
