@@ -1,24 +1,12 @@
 {
   "products": [
     {
-      "title": "tsr",
-      "type": 20,
-      "price": "dfg",
-      "description": "dfg",
-      "img": "dfg",
-      "id": 1
-    },
-    {
       "title": "test",
       "type": 20,
-      "price": "2222",
-      "description": "sdfsdf",
+      "price": "444444",
+      "description": "sdfsdfkkkkskks",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 2
-    },
-    {
-      "newProduct": "",
-      "id": 3
     },
     {
       "title": "wer",
@@ -27,6 +15,22 @@
       "description": "sdfsdf",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 4
+    },
+    {
+      "title": "kjhsdjf",
+      "type": 20,
+      "price": "slkdjs",
+      "description": "",
+      "img": "sldk",
+      "id": 5
+    },
+    {
+      "title": "something",
+      "type": 20,
+      "price": "100",
+      "description": "girl",
+      "img": "https://media.macphun.com/img/uploads/customer/how-to/579/15531840725c93b5489d84e9.43781620.jpg?q=85&w=1340",
+      "id": 6
     }
   ]
 }
