@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import { useProductContext } from "../../../contexts/ProductContextProvider";
 import Spinner from "../../Spinner/Spinner";
-import OneProduct from "../OneProduct";
+import OneProduct from "../OneProduct/OneProduct";
 
 const ProdList = () => {
   const { getProducts, products } = useProductContext();
@@ -14,13 +14,7 @@ const ProdList = () => {
   return (
     <div>
       <h2>Prod list</h2>
-      <Grid
-        container
-        spacing={2}
-        justifyContent="center"
-        alignItems="center"
-        direction="row"
-      >
+      <Grid container spacing={2}>
         {products && products.length > 0 ? (
           products.map((item) => <OneProduct key={item.id} item={item} />)
         ) : (

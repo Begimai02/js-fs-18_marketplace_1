@@ -1,20 +1,20 @@
 import { IconButton } from "@mui/material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import React from "react";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { useNavigate } from "react-router-dom";
 import Form from "../Form/Form";
 import { useProductContext } from "../../../contexts/ProductContextProvider";
 
 const Add = () => {
   const navigate = useNavigate();
-  const { addProducts } = useProductContext();
+  const { addProduct } = useProductContext();
   return (
     <div>
       <IconButton onClick={() => navigate(-1)}>
-        <ArrowBackIosIcon fontSize="large" />
+        <ArrowBackIosNewIcon fontSize="large" />
       </IconButton>
-      <h1>Add Admin Page</h1>
-      <Form saveValues={addProducts} compForEdit={false} />
+      <h2>Add</h2>
+      <Form saveValues={addProduct} compForEdit={false} />
     </div>
   );
 };

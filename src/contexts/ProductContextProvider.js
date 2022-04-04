@@ -28,7 +28,6 @@ function reducer(state = INIT_STATE, action) {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
-  //RENDER
   const getProducts = async () => {
     try {
       let { data } = await axios.get(API);
@@ -37,71 +36,65 @@ const ProductContextProvider = ({ children }) => {
         payload: data,
       });
     } catch (err) {
-      if (err.response) {
-        notifyError(err.response, err.response.status, err.response.statusText);
-      } else {
-        notify("error", "Something went wrong");
-      }
+      notifyError(err);
     }
   };
-  //CREATE
-  const addProducts = async (newProduct) => {
+
+  const addProduct = async (newProduct) => {
     try {
       let res = await axios.post(API, newProduct);
-      notify("success", `Product ${newProduct.title} successfully posted!`);
+      notify("success", `Продукт ${newProduct.title} был успешно добавлен!`);
       navigate("/admin");
     } catch (err) {
-      console.log(err);
-      notify(err);
+      notifyError(err);
     }
   };
-  //DELETE
+
   const deleteProduct = async (prod) => {
     try {
       let res = await axios.delete(`${API}/${prod.id}`);
-      notify("success", `Product ${prod.title} successfully deleted!`);
+      notify("seccess", `Продукт ${prod.title}был удален!`);
       getProducts();
     } catch (err) {
-      notify(err);
+      notifyError(err);
     }
   };
-  //EDIT
+
   const getOneProduct = async (id) => {
     try {
-      let { data } = await axios.get(`${API}/${id}`);
+      let { data } = await axios(`${API}/${id}`);
       dispatch({
         type: ACTIONS.GET_ONE_PRODUCT,
         payload: data,
       });
     } catch (err) {
-      notify(err);
+      notifyError(err);
     }
   };
 
   const saveEditedProd = async (editedProd) => {
     try {
       let res = await axios.patch(`${API}/${editedProd.id}`, editedProd);
-      notify("info", `Product ${editedProd.title} successfully updated.`);
+      notify("info", `Продук ${editedProd.title} был успешно обновлен`);
       getProducts();
       navigate("/admin");
     } catch (err) {
-      notify(err);
+      notifyError(err);
     }
   };
-
   return (
     <productContext.Provider
       value={{
         products: state.products,
         forEditVal: state.forEditVal,
-        getOneProduct,
+        addProduct,
         getProducts,
-        addProducts,
         deleteProduct,
+        getOneProduct,
         saveEditedProd,
       }}
     >
-      {children}{" "}
+      {children}
     </productContext.Provider>
   );
 };

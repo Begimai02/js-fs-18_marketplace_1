@@ -7,32 +7,31 @@ import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 
-const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
-  const initValues = {
-    title: "",
-    type: "",
-    price: "",
-    description: "",
-    img: "",
-  };
+const initValues = {
+  title: "",
+  type: "",
+  price: "",
+  description: "",
+  img: "",
+};
 
+const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
   const [inpValues, setInpValues] = useState(initValues);
   const { id } = useParams();
 
-  //edit
+  //todo ===> EDIT
   useEffect(() => {
     if (compForEdit) {
       getOneProduct(id);
     }
   }, []);
-
   useEffect(() => {
     if (compForEdit && forEditVal) {
       setInpValues(forEditVal);
     }
   }, [forEditVal]);
 
-  //end of edit
+  //todo ===> END OF EDIT
 
   const handleChange = (e) => {
     let obj = {
@@ -48,14 +47,17 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
 
   return (
     <div>
-      <h2>Form admin page</h2>
+      <h2>Form</h2>
       <form
-        style={{ display: "flex", flexDirection: "column" }}
         onSubmit={(e) => handleSubmit(e)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
         <TextField
-          value={inpValues.title}
           name="title"
+          value={inpValues.title}
           onChange={(e) => handleChange(e)}
           id="outlined-basic"
           label="Title"
@@ -66,10 +68,10 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
+            name="type"
             value={inpValues.type}
             label="Type"
             onChange={(e) => handleChange(e)}
-            name="type"
           >
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -77,24 +79,24 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
           </Select>
         </FormControl>
         <TextField
-          value={inpValues.price}
           name="price"
+          value={inpValues.price}
           onChange={(e) => handleChange(e)}
           id="outlined-basic"
           label="Price"
           variant="outlined"
         />
         <TextField
-          value={inpValues.img}
           name="img"
+          value={inpValues.img}
           onChange={(e) => handleChange(e)}
           id="outlined-basic"
-          label="Img"
+          label="Image"
           variant="outlined"
         />
         <TextField
-          value={inpValues.description}
           name="description"
+          value={inpValues.description}
           onChange={(e) => handleChange(e)}
           id="outlined-basic"
           label="Description"

@@ -1,14 +1,16 @@
-import { Container, IconButton } from "@mui/material";
 import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Container, IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Admin = () => {
   const { pathname } = useLocation();
   return (
     <div>
-      <Container maxWidth={"md"}>
-        <h1>Admin Page</h1>
+      <Container maxWidth="lg">
+        <h1>Admin page</h1>
+
         {pathname !== "/admin/add" ? (
           <Link to="add">
             <IconButton>

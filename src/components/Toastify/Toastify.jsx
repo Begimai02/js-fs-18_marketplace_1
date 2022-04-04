@@ -3,8 +3,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const notify = (type, message) => {
-  toast.success(message, {
-    position: "top-left",
+  toast(message, {
+    position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -20,14 +20,14 @@ export const notifyError = (err) => {
   if (err && err?.response) {
     notify("error", `${err?.response.status} ${err?.response.statusText}`);
   } else {
-    notify("error", "Something went wrong!");
+    notify("error", "Произошла ошибка!");
   }
 };
 
 const Toastify = () => {
   return (
     <ToastContainer
-      position="top-left"
+      position="top-right"
       autoClose={5000}
       hideProgressBar={false}
       newestOnTop={false}

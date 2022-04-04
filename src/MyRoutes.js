@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
-import Home from "./pages/Home";
 import Products from "./pages/Products";
 import List from "./components/Admin/List/List";
 import Add from "./components/Admin/Add/Add";

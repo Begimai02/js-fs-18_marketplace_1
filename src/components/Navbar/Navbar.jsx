@@ -16,9 +16,10 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css";
+import { Link as RouterLink, NavLink } from "react-router-dom";
 import InfoIcon from "@mui/icons-material/Info";
+
+import "./Navbar.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -123,7 +124,7 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {/* here is our links */}
+      {/*===> here is my items */}
       <MenuItem>
         <NavLink to="/about" className="mobile-link">
           <IconButton
@@ -160,7 +161,9 @@ export default function Navbar() {
           <p>Admin</p>
         </NavLink>
       </MenuItem>
-      {/* end of my link */}
+
+      {/* end of my items */}
+
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
@@ -212,8 +215,8 @@ export default function Navbar() {
           <Typography
             variant="h6"
             noWrap
-            component={Link}
             to="/"
+            component={RouterLink}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
             MUI
@@ -231,21 +234,36 @@ export default function Navbar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-              sx={{ my: 2, display: "block", color: "white", fontSize: "16px" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
               component={NavLink}
               to="/about"
             >
               ABOUT
             </Button>
             <Button
-              sx={{ my: 2, display: "block", color: "white", fontSize: "16px" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
               component={NavLink}
               to="/products"
             >
               PRODUCTS
             </Button>
             <Button
-              sx={{ my: 2, display: "block", color: "white", fontSize: "16px" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                fontSize: "16px",
+              }}
               component={NavLink}
               to="/admin"
             >
