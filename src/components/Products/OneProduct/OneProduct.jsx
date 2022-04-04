@@ -24,8 +24,9 @@ export default function OneProduct({ item }) {
           <Typography variant="h6" color="green">
             ${item.price}
           </Typography>
-          <Typography variant="body1" color="black">
-            Type: {item.description}
+          <Typography variant="body1">Type: {item.type}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.description}
           </Typography>
         </CardContent>
         <CardActions>

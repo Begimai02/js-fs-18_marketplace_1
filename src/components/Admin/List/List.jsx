@@ -21,10 +21,12 @@ const List = () => {
   }, []);
 
   const handleDelete = (prod) => {
-    // let answer = confirm("Действительно ли вы хотите удалить продукт?");
+    // let answer = confirm("Действительно ли вы хотите удалить данный продукт?");
     let answer = true;
+
     if (answer) deleteProduct(prod);
   };
+
   return (
     <div>
       <h2>Admin List</h2>
@@ -34,7 +36,7 @@ const List = () => {
             <TableHead>
               <TableRow>
                 <TableCell sx={{ fontWeight: "bold" }}>Title</TableCell>
-                <TableCell sx={{ fontWeight: "bold" }} align="right">
+                <TableCell sx={{ fontWeight: "bold" }} align="center">
                   Type
                 </TableCell>
                 <TableCell sx={{ fontWeight: "bold" }} align="right">
@@ -57,7 +59,7 @@ const List = () => {
                   <TableCell component="th" scope="row">
                     {item.title}
                   </TableCell>
-                  <TableCell align="right">{item.type}</TableCell>
+                  <TableCell align="center">{item.type}</TableCell>
                   <TableCell align="right">
                     <img width="40px" src={item.img} alt={item.title} />
                   </TableCell>

@@ -6,9 +6,11 @@ import OneProduct from "../OneProduct/OneProduct";
 
 const ProdList = () => {
   const { getProducts, products } = useProductContext();
+
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <div>
       <h2>Prod list</h2>

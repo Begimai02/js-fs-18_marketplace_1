@@ -30,7 +30,8 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
       setInpValues(forEditVal);
     }
   }, [forEditVal]);
-  //todo ===>END OF EDIT
+
+  //todo ===> END OF EDIT
 
   const handleChange = (e) => {
     let obj = {
