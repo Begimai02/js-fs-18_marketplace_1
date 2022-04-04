@@ -11,13 +11,21 @@ import Paper from "@mui/material/Paper";
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { Link } from "react-router-dom";
 
 const List = () => {
-  const { products, getProducts } = useProductContext();
+  const { products, getProducts, deleteProduct } = useProductContext();
 
   useEffect(() => {
     getProducts();
   }, []);
+
+  const handleDelete = (prod) => {
+    // let answer = confirm("Действительно ли вы хотите удалить данный продукт?");
+    let answer = true;
+
+    if (answer) deleteProduct(prod);
+  };
 
   return (
     <div>
@@ -27,11 +35,19 @@ const List = () => {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Title</TableCell>
-                <TableCell align="right">Type</TableCell>
-                <TableCell align="right">Image</TableCell>
-                <TableCell align="right">Price</TableCell>
-                <TableCell align="right">Actions</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }}>Title</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }} align="center">
+                  Type
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold" }} align="right">
+                  Image
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold" }} align="right">
+                  Price
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold" }} align="right">
+                  Actions
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -43,19 +59,21 @@ const List = () => {
                   <TableCell component="th" scope="row">
                     {item.title}
                   </TableCell>
-                  <TableCell align="right">{item.type}</TableCell>
+                  <TableCell align="center">{item.type}</TableCell>
                   <TableCell align="right">
                     <img width="40px" src={item.img} alt={item.title} />
                   </TableCell>
                   <TableCell align="right">{item.price}</TableCell>
                   <TableCell align="right">
-                    <IconButton>
+                    <IconButton onClick={() => handleDelete(item)}>
                       <DeleteIcon />
                     </IconButton>
 
-                    <IconButton>
-                      <EditIcon />
-                    </IconButton>
+                    <Link to={`edit/${item.id}`}>
+                      <IconButton>
+                        <EditIcon />
+                      </IconButton>
+                    </Link>
                   </TableCell>
                 </TableRow>
               ))}

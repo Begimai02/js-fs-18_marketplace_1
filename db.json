@@ -1,15 +1,7 @@
 {
   "products": [
     {
-      "title": "tsr",
-      "type": 20,
-      "price": "dfg",
-      "description": "dfg",
-      "img": "dfg",
-      "id": 1
-    },
-    {
-      "title": "test",
+      "title": " test 1231",
       "type": 20,
       "price": "2222",
       "description": "sdfsdf",
@@ -17,16 +9,28 @@
       "id": 2
     },
     {
-      "newProduct": "",
+      "title": "jsldkf",
+      "type": 30,
+      "price": "600",
+      "description": "sdfsdfsdf",
+      "img": "https://www.omega-level.net/wp-content/uploads/2013/01/Astronaut-time.png",
       "id": 3
     },
     {
-      "title": "wer",
+      "title": "sdf",
       "type": 20,
       "price": "234",
-      "description": "sdfsdf",
+      "description": "cxvsd",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 4
+    },
+    {
+      "title": "weee",
+      "type": 20,
+      "price": "2222",
+      "description": "dddddd",
+      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
+      "id": 5
     }
   ]
 }
