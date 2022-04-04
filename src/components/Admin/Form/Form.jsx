@@ -27,6 +27,7 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveValues(inpValues);
   };
 
   return (
