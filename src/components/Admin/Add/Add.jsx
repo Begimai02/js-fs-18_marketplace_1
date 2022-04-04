@@ -7,14 +7,14 @@ import { useProductContext } from "../../../contexts/ProductContextProvider";
 
 const Add = () => {
   const navigate = useNavigate();
-  const { addProducts } = useProductContext();
+  const { addProduct } = useProductContext();
   return (
     <div>
       <IconButton onClick={() => navigate(-1)}>
         <ArrowBackIosNewIcon fontSize="large" />
       </IconButton>
       <h2>Add</h2>
-      <Form saveValues={addProducts} compForEdit={false} />
+      <Form saveValues={addProduct} compForEdit={false} />
     </div>
   );
 };
