@@ -1,8 +1,9 @@
 import { createContext } from "react";
 import "./App.css";
-import Toastify from "./components/Toastify/Toastify";
-import ProductContextProvider from "./contexts/ProductContextProvider";
+import ProductContextProvider from "./Context/ProductContextProvider";
 import MyRoutes from "./MyRoutes";
+import Toastify from "./Components/Toastify/Toastify";
+
 
 function App() {
   return (

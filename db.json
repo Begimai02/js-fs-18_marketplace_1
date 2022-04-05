@@ -1,36 +1,30 @@
 {
   "products": [
     {
-      "title": " test 1231",
+      "title": "test",
       "type": 20,
-      "price": "444444",
-      "description": "sdfsdfkkkkskks",
-      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
+      "price": "20000",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate deserunt amet facere corporis, ducimus suscipit aliquid quod incidunt temporibus asperiores consequatur. Perspiciatis maxime beatae dolores recusandae deserunt! Exercitationem recusandae totam hic est rem corrupti mollitia enim ipsum sapiente quas accusantium nulla eius cumque autem dolorum reprehenderit ratione, earum blanditiis natus quos commodi voluptates officia ullam. Culpa, cupiditate molestias voluptas mollitia alias aspernatur fugiat distinctio doloremque quibusdam ipsam? Voluptates amet nesciunt, repellendus doloribus numquam nisi tempore deleniti libero nam saepe quam quod rem voluptate quo aspernatur perspiciatis nobis aliquam eveniet architecto laborum consequatur quibusdam. Natus commodi exercitationem, animi delectus quasi corporis?",
+      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
       "id": 2
     },
     {
-      "title": "jsldkf",
-      "type": 30,
-      "price": "600",
-      "description": "sdfsdfsdf",
-      "img": "https://www.omega-level.net/wp-content/uploads/2013/01/Astronaut-time.png",
+      "title": "test2",
+      "type": 20,
+      "price": "5000",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate deserunt amet facere corporis, ducimus suscipit aliquid quod incidunt temporibus asperiores consequatur. Perspiciatis maxime beatae dolores recusandae deserunt! Exercitationem recusandae totam hic est rem corrupti mollitia enim ipsum sapiente quas accusantium nulla eius cumque autem dolorum reprehenderit ratione, earum blanditiis natus quos commodi voluptates officia ullam. Culpa, cupiditate molestias voluptas mollitia alias aspernatur fugiat distinctio doloremque quibusdam ipsam? Voluptates amet nesciunt, repellendus doloribus numquam nisi tempore deleniti libero nam saepe quam quod rem voluptate quo aspernatur perspiciatis nobis aliquam eveniet architecto laborum consequatur quibusdam. Natus commodi exercitationem, animi delectus quasi corporis?",
+      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
       "id": 3
     },
     {
-      "title": "sdf",
+      "title": "test4",
       "type": 20,
-      "price": "23445",
-      "description": "cxvsd",
-      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
+      "price": "500",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate deserunt amet facere corporis, ducimus suscipit aliquid quod incidunt temporibus asperiores consequatur. Perspiciatis maxime beatae dolores recusandae deserunt! Exercitationem recusandae totam hic est rem corrupti mollitia enim ipsum sapiente quas accusantium nulla eius cumque autem dolorum reprehenderit ratione, earum blanditiis natus quos commodi voluptates officia ullam. Culpa, cupiditate molestias voluptas mollitia alias aspernatur fugiat distinctio doloremque quibusdam ipsam? Voluptates amet nesciunt, repellendus doloribus numquam nisi tempore deleniti libero nam saepe quam quod rem voluptate quo aspernatur perspiciatis nobis aliquam eveniet architecto laborum consequatur quibusdam. Natus commodi exercitationem, animi delectus quasi corporis?",
+      "img": "https://resheto.net/images/mater/pozitivnye_kartinki_2.jpg",
       "id": 4
     },
-    {
-      "title": "weee",
-      "type": 20,
-      "price": "2222",
-      "description": "dddddd",
-      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
-      "id": 5
+
     }
   ]
 }
