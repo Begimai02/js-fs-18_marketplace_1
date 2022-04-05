@@ -18,6 +18,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button } from "@mui/material";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import InfoIcon from "@mui/icons-material/Info";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 
 import "./Navbar.css";
 
@@ -200,8 +201,8 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ position: "sticky", top: 0, right: 0, left: 0 }}>
+      <AppBar position="static" className="navbar-container">
         <Toolbar>
           {/* <IconButton
             size="large"
@@ -213,23 +214,16 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton> */}
           <Typography
+            className="mui-link"
             variant="h6"
             noWrap
             to="/"
             component={RouterLink}
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            JS/FS 18
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -272,7 +266,7 @@ export default function Navbar() {
           </Box>
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
@@ -289,6 +283,26 @@ export default function Navbar() {
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
+            </IconButton> */}
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <ShoppingBasketIcon />
             </IconButton>
             <IconButton
               size="large"

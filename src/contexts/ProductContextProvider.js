@@ -14,7 +14,6 @@ const INIT_STATE = {
   products: [],
   forEditVal: null,
 };
-
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
     case ACTIONS.GET_PRODUCTS:
@@ -29,7 +28,6 @@ function reducer(state = INIT_STATE, action) {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
-
   const getProducts = async () => {
     try {
       let { data } = await axios.get(API);
