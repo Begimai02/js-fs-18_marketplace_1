@@ -14,15 +14,12 @@ const INIT_STATE = {
   products: [],
   forEditVal: null,
 };
-
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
     case ACTIONS.GET_PRODUCTS:
       return { ...state, products: action.payload };
-
     case ACTIONS.GET_ONE_PRODUCT:
       return { ...state, forEditVal: action.payload };
-
     default:
       return state;
   }
@@ -31,7 +28,6 @@ function reducer(state = INIT_STATE, action) {
 const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   const navigate = useNavigate();
-
   const getProducts = async () => {
     try {
       let { data } = await axios.get(API);
@@ -50,7 +46,6 @@ const ProductContextProvider = ({ children }) => {
       notify("success", `Продукт ${newProduct.title} был успешно добавлен!`);
       navigate("/admin");
     } catch (err) {
-      console.log(err.response);
       notifyError(err);
     }
   };
@@ -58,7 +53,7 @@ const ProductContextProvider = ({ children }) => {
   const deleteProduct = async (prod) => {
     try {
       let res = await axios.delete(`${API}/${prod.id}`);
-      notify("success", `Продукт ${prod.title} был удален!`);
+      notify("seccess", `Продукт ${prod.title}был удален!`);
       getProducts();
     } catch (err) {
       notifyError(err);
@@ -67,7 +62,7 @@ const ProductContextProvider = ({ children }) => {
 
   const getOneProduct = async (id) => {
     try {
-      let { data } = await axios.get(`${API}/${id}`);
+      let { data } = await axios(`${API}/${id}`);
       dispatch({
         type: ACTIONS.GET_ONE_PRODUCT,
         payload: data,
@@ -80,14 +75,13 @@ const ProductContextProvider = ({ children }) => {
   const saveEditedProd = async (editedProd) => {
     try {
       let res = await axios.patch(`${API}/${editedProd.id}`, editedProd);
-      notify("info", `Продукт ${editedProd.title} был успешно обновлен!`);
+      notify("info", `Продук ${editedProd.title} был успешно обновлен`);
       getProducts();
       navigate("/admin");
     } catch (err) {
       notifyError(err);
     }
   };
-
   return (
     <productContext.Provider
       value={{

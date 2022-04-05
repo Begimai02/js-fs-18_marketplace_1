@@ -4,7 +4,6 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { useNavigate } from "react-router-dom";
 import Form from "../Form/Form";
 import { useProductContext } from "../../../contexts/ProductContextProvider";
-
 const Edit = () => {
   const navigate = useNavigate();
   const { forEditVal, getOneProduct, saveEditedProd } = useProductContext();

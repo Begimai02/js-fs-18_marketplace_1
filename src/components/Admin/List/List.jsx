@@ -68,7 +68,6 @@ const List = () => {
                     <IconButton onClick={() => handleDelete(item)}>
                       <DeleteIcon />
                     </IconButton>
-
                     <Link to={`edit/${item.id}`}>
                       <IconButton>
                         <EditIcon />

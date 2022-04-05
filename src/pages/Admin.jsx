@@ -18,7 +18,6 @@ const Admin = () => {
             </IconButton>
           </Link>
         ) : null}
-
         <Outlet />
       </Container>
     </div>

@@ -6,6 +6,7 @@ const Products = () => {
   return (
     <Container maxWidth="lg">
       <h1>Products page</h1>
+      <h2>my comment Zhanara</h2>
       <ProdList />
     </Container>
   );
