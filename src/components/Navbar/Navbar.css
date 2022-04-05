@@ -7,3 +7,10 @@
   color: black;
   text-decoration: none;
 }
+.mui-link {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar-container {
+  background: linear-gradient(to right, #ffa17f, #00223e);
+}
