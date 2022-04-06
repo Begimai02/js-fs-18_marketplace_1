@@ -19,10 +19,17 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LiveSearch from "../LiveSearch/LiveSearch";
 
 import "./Navbar.css";
+import { useCart } from "../../contexts/CartContextProvider";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const { getCartLength, cartLength } = useCart();
+
+  React.useEffect(() => {
+    getCartLength();
+  }, []);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -247,17 +254,20 @@ export default function Navbar() {
             <LiveSearch />
             {/* Живой поиск */}
 
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <ShoppingBasketIcon />
-            </IconButton>
+            <RouterLink to="/cart" style={{ color: "white" }}>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <Badge badgeContent={+cartLength} color="error">
+                  <ShoppingBasketIcon />
+                </Badge>
+              </IconButton>
+            </RouterLink>
+
             <IconButton
               size="large"
               edge="end"
