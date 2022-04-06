@@ -2,13 +2,16 @@ import "./App.css";
 import ProductContextProvider from "./contexts/ProductContextProvider";
 import MyRoutes from "./MyRoutes";
 import Toastify from "./components/Toastify/Toastify";
+import CartContextProvider from "./contexts/CartContextProvider";
 
 function App() {
   return (
-    <ProductContextProvider>
-      <Toastify />
-      <MyRoutes />
-    </ProductContextProvider>
+    <CartContextProvider>
+      <ProductContextProvider>
+        <Toastify />
+        <MyRoutes />
+      </ProductContextProvider>
+    </CartContextProvider>
   );
 }
 
