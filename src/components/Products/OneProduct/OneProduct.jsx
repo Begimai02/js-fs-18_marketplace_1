@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid, IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 
 import { useCart } from "../../../contexts/CartContextProvider";
 
@@ -46,7 +47,9 @@ export default function OneProduct({ item }) {
           >
             <ShoppingCartIcon />
           </IconButton>
-          <Button size="small">Learn More</Button>
+          <Button component={Link} to={`detail/${item.id}`} size="small">
+            Learn More
+          </Button>
         </CardActions>
       </Card>
     </Grid>
