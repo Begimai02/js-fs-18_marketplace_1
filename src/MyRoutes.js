@@ -8,6 +8,7 @@ import Products from "./pages/Products";
 import List from "./components/Admin/List/List";
 import Add from "./components/Admin/Add/Add";
 import Edit from "./components/Admin/Edit/Edit";
+import Cart from "./pages/Cart";
 
 const MyRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const MyRoutes = () => {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<Admin />}>
           <Route index element={<List />} />
           <Route path="add" element={<Add />} />

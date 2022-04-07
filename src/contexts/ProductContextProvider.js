@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { notify, notifyError } from "../components/Toastify/Toastify";
-import { ACTIONS, API } from "../helpers/consts";
+import { ACTIONS, API, PRODUCTS_LIMIT } from "../helpers/consts";
 
 export const productContext = createContext();
 
@@ -13,11 +13,18 @@ export const useProductContext = () => {
 const INIT_STATE = {
   products: [],
   forEditVal: null,
+  pageTotalCount: 1,
 };
 function reducer(state = INIT_STATE, action) {
   switch (action.type) {
     case ACTIONS.GET_PRODUCTS:
-      return { ...state, products: action.payload };
+      return {
+        ...state,
+        products: action.payload.data,
+        pageTotalCount: Math.ceil(
+          action.payload.headers["x-total-count"] / PRODUCTS_LIMIT
+        ),
+      };
     case ACTIONS.GET_ONE_PRODUCT:
       return { ...state, forEditVal: action.payload };
     default:
@@ -30,10 +37,10 @@ const ProductContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const getProducts = async () => {
     try {
-      let { data } = await axios.get(API);
+      let res = await axios.get(`${API}${window.location.search}`);
       dispatch({
         type: ACTIONS.GET_PRODUCTS,
-        payload: data,
+        payload: res,
       });
     } catch (err) {
       notifyError(err);
@@ -53,7 +60,7 @@ const ProductContextProvider = ({ children }) => {
   const deleteProduct = async (prod) => {
     try {
       let res = await axios.delete(`${API}/${prod.id}`);
-      notify("seccess", `Продукт ${prod.title}был удален!`);
+      notify("success", `Продукт ${prod.title}был удален!`);
       getProducts();
     } catch (err) {
       notifyError(err);
@@ -87,6 +94,7 @@ const ProductContextProvider = ({ children }) => {
       value={{
         products: state.products,
         forEditVal: state.forEditVal,
+        pageTotalCount: state.pageTotalCount,
         addProduct,
         getProducts,
         deleteProduct,

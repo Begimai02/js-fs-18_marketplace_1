@@ -42,7 +42,11 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    saveValues(inpValues);
+    let obj = {
+      ...inpValues,
+      price: +inpValues.price,
+    };
+    saveValues(obj);
   };
 
   return (
@@ -79,6 +83,7 @@ const Form = ({ saveValues, compForEdit, forEditVal, getOneProduct }) => {
           </Select>
         </FormControl>
         <TextField
+          type="number"
           name="price"
           value={inpValues.price}
           onChange={(e) => handleChange(e)}

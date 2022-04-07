@@ -3,7 +3,7 @@
     {
       "title": " test 1231",
       "type": 20,
-      "price": "444444",
+      "price": 444444,
       "description": "sdfsdfkkkkskks",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 2
@@ -11,26 +11,42 @@
     {
       "title": "jsldkf",
       "type": 30,
-      "price": "600",
+      "price": 600,
       "description": "sdfsdfsdf",
       "img": "https://www.omega-level.net/wp-content/uploads/2013/01/Astronaut-time.png",
       "id": 3
     },
     {
-      "title": "sdf",
-      "type": 20,
-      "price": "23445",
-      "description": "cxvsd",
-      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
-      "id": 4
-    },
-    {
       "title": "weee",
       "type": 20,
-      "price": "2222",
+      "price": 2222,
       "description": "dddddd",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 5
+    },
+    {
+      "title": "123123asd",
+      "type": 20,
+      "price": 123123,
+      "description": "saddsa",
+      "img": "https://freepikpsd.com/file/2019/10/cute-panda-drawing-png-10-Png-Transparent-Images.png",
+      "id": 7
+    },
+    {
+      "title": "saddas",
+      "type": 20,
+      "price": 12312313,
+      "description": "dsadasd",
+      "img": "dsada",
+      "id": 8
+    },
+    {
+      "title": "123123123qweqweqwe",
+      "type": 20,
+      "price": 123123123,
+      "description": "sadasdasasd",
+      "img": "aasdasdasd",
+      "id": 10
     }
   ]
 }
