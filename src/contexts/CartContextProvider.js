@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { CART } from "../helpers/consts";
-import { calcTotalPrice } from "../helpers/functions";
+import { calcTotalPrice, calSubPrice } from "../helpers/functions";
 
 const cartContext = createContext();
 
@@ -102,6 +102,31 @@ const CartContextProvider = ({ children }) => {
     });
   };
 
+  const changeProductCount = (newCount, id) => {
+    let cart = createCartFromLS();
+    cart.products = cart.products.map((elem) => {
+      if (elem.item.id === id) {
+        elem.count = newCount;
+        elem.subPrice = calSubPrice(elem);
+      }
+      return elem;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCart();
+  };
+
+  const deleteProdInCart = (id) => {
+    let cart = createCartFromLS();
+    cart.products = cart.products.filter((elem) => {
+      return elem.item.id !== id;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCart();
+    getCartLength();
+  };
+
   return (
     <cartContext.Provider
       value={{
@@ -111,6 +136,8 @@ const CartContextProvider = ({ children }) => {
         getCartLength,
         isProdInCart,
         getCart,
+        changeProductCount,
+        deleteProdInCart,
       }}
     >
       {children}

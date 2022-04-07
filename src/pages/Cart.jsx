@@ -9,12 +9,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import { Button, Container } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const Cart = () => {
-  const { cart, getCart } = useCart();
+  const { cart, getCart, changeProductCount, deleteProdInCart } = useCart();
 
   useEffect(() => {
     getCart();
@@ -70,9 +72,29 @@ const Cart = () => {
                       </TableCell>
                       <TableCell align="right">{elem.item.price}</TableCell>
                       <TableCell align="right">{elem.subPrice}</TableCell>
-                      <TableCell align="right">+{elem.count}-</TableCell>
                       <TableCell align="right">
-                        <IconButton>
+                        <IconButton
+                          onClick={() =>
+                            changeProductCount(elem.count + 1, elem.item.id)
+                          }
+                        >
+                          <AddIcon />
+                        </IconButton>
+
+                        {elem.count}
+
+                        <IconButton
+                          onClick={() =>
+                            changeProductCount(elem.count - 1, elem.item.id)
+                          }
+                        >
+                          <RemoveIcon />
+                        </IconButton>
+                      </TableCell>
+                      <TableCell align="right">
+                        <IconButton
+                          onClick={() => deleteProdInCart(elem.item.id)}
+                        >
                           <DeleteIcon />
                         </IconButton>
                       </TableCell>
@@ -81,6 +103,11 @@ const Cart = () => {
                 </TableBody>
               </Table>
             </TableContainer>
+
+            <Typography variant="h4">
+              Total price: ${cart.totalPrice}
+            </Typography>
+            <Button variant="contained">BUY NOW FOR ${cart.totalPrice}</Button>
           </>
         ) : (
           <div style={{ textAlign: "center" }}>

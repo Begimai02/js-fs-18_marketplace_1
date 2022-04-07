@@ -5,3 +5,7 @@ export const calcTotalPrice = (arr) => {
   });
   return total;
 };
+
+export const calSubPrice = (elem) => {
+  return elem.count * elem.item.price;
+};

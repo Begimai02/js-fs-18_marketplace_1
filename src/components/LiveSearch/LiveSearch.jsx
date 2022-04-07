@@ -59,6 +59,12 @@ const LiveSearch = () => {
     });
   }, [inpSearch]);
 
+  // useEffect(() => {
+  //   if (searchParams.get("q") !== inpSearch) {
+  //     setInpSearch(searchParams.get("q") || "");
+  //   }
+  // }, []);
+
   return (
     <Search>
       <SearchIconWrapper>
