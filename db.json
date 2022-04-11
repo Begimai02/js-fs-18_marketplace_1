@@ -1,17 +1,9 @@
 {
   "products": [
     {
-      "title": " test 1231",
-      "type": 20,
-      "price": "444444",
-      "description": "sdfsdfkkkkskks",
-      "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
-      "id": 2
-    },
-    {
       "title": "jsldkf",
       "type": 30,
-      "price": "600",
+      "price": 600,
       "description": "sdfsdfsdf",
       "img": "https://www.omega-level.net/wp-content/uploads/2013/01/Astronaut-time.png",
       "id": 3
@@ -19,7 +11,7 @@
     {
       "title": "sdf",
       "type": 20,
-      "price": "23445",
+      "price": 23445,
       "description": "cxvsd",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 4
@@ -27,10 +19,74 @@
     {
       "title": "weee",
       "type": 20,
-      "price": "2222",
+      "price": 2222,
       "description": "dddddd",
       "img": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
       "id": 5
+    },
+    {
+      "title": "213",
+      "type": 20,
+      "price": 123,
+      "description": "22232",
+      "img": "22",
+      "id": 6
+    },
+    {
+      "title": "123",
+      "type": 10,
+      "price": 12321,
+      "description": "23232214",
+      "img": "21321",
+      "id": 7
+    },
+    {
+      "title": "2333",
+      "type": 20,
+      "price": 1232,
+      "description": "4566655",
+      "img": "2323",
+      "id": 8
+    },
+    {
+      "title": "sdas",
+      "type": 30,
+      "price": 12321,
+      "description": "sdfsdf",
+      "img": "dasd",
+      "id": 9
+    },
+    {
+      "title": "sdasd",
+      "type": 20,
+      "price": 12312,
+      "description": "asdasdas",
+      "img": "dasd",
+      "id": 10
+    },
+    {
+      "title": "13213",
+      "type": 20,
+      "price": 12323,
+      "description": "sdasdasd",
+      "img": "dasdas",
+      "id": 11
+    },
+    {
+      "title": "213123",
+      "type": 20,
+      "price": 23123231,
+      "description": "sadasda",
+      "img": "sdasda",
+      "id": 12
+    },
+    {
+      "title": "test",
+      "type": 20,
+      "price": 1290,
+      "description": "",
+      "img": "",
+      "id": 13
     }
   ]
 }

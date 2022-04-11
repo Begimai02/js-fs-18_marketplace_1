@@ -5,9 +5,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Grid } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "../../../contexts/CartContextProvider";
+import { Link } from "react-router-dom";
 
 export default function OneProduct({ item }) {
+  const { addDelCart, isProdInCart } = useCart();
+  const [inCart, setInCart] = React.useState(isProdInCart(item.id));
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Card sx={{ maxWidth: 345 }}>
@@ -31,8 +36,18 @@ export default function OneProduct({ item }) {
         </CardContent>
 
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <IconButton
+            color={inCart ? "secondary" : "inherit"}
+            onClick={() => {
+              addDelCart(item);
+              setInCart(isProdInCart(item.id));
+            }}
+          >
+            <ShoppingCartIcon />
+          </IconButton>
+          <Button component={Link} to={`detail/${item.id}`} size="small">
+            Learn More
+          </Button>
         </CardActions>
       </Card>
     </Grid>
